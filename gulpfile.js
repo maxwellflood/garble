@@ -5,8 +5,7 @@ var sourcemaps = require('gulp-sourcemaps')
 var browserSync = require('browser-sync').create()
 var imagemin = require('gulp-imagemin')
 var uglify = require('gulp-uglify')
-var pump = require('pump')
-var ghpages = require('gulp-gh-pages')
+
 
 
 
@@ -69,8 +68,6 @@ gulp.task('watch', function(){
     gulp.watch('src/css/app.scss', ['sass'])
 })
 
-gulp.task('deploy',function(){
-    ghpages.publish('dist', function(err) {});
-})
+
 
 gulp.task('default', ['html','images','fonts','uglify','sass', 'watch'])
