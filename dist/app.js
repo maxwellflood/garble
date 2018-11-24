@@ -11,7 +11,7 @@ document.addEventListener('mousemove', function(e){
 
         //div.innerHTML = score.toFixed(2)
         div.style.transform ="scale(" + score + ")"
-        div.style.opacity = 0.2 + score
+        div.style.opacity = score
     })
 
 })
