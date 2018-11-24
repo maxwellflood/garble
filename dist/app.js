@@ -10,7 +10,7 @@ document.addEventListener('mousemove', function(e){
         const score = Math.exp(dist*-0.003)
 
         //div.innerHTML = score.toFixed(2)
-        div.style.transform ="scale(" + score + ")"
+        div.style.transform ="scale(" + score + ")" + " rotate(" + 0 + "deg)"
         div.style.opacity = score
     })
 
