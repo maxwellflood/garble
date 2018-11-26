@@ -1,4 +1,14 @@
 @font-face {
-    font-family:"Jost";
-    src: url(fonts/jos-book.woff2), url(fonts/jost-book.woff);
+    font-family:"Messina-Light";
+    src: url(fonts/MessinaSansTrialWeb-Light.woff2), url(fonts/MessinaSansTrialWeb-Light.woff);
+}
+
+@font-face {
+    font-family:"Messina-Book";
+    src: url(fonts/MessinaSansTrialWeb-Book.woff2), url(fonts/MessinaSansTrialWeb-Book.woff);
+}
+
+@font-face {
+    font-family:"Messina-Regular";
+    src: url(fonts/MessinaSansTrialWeb-Regular.woff2), url(fonts/MessinaSansTrialWeb-Regular.woff);
 }
