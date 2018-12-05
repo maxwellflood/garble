@@ -42,16 +42,10 @@ gulp.task('images', function(){
         .pipe(gulp.dest('dist/img'))
 })
 
-// gulp.task('jsmini', function(){
-//     return gulp.src('src/js/*')
-//         .pipe(uglify())
-//         .pipe(gulp.dest('dist'))
-// })
-
 gulp.task('uglify', function (cb) {
     return gulp.src('src/js/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist/js'))
 })
 
 
