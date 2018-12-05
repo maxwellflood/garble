@@ -1,20 +1,7 @@
 
-// document.addEventListener('mousemove', function(e){
-//     const x = e.pageX
-//     const y = e.pageY
 
-//     document.querySelectorAll('section div').forEach(div =>{
-//         const dx = div.offsetLeft + 50 - x
-//         const dy = div.offsetTop + 50 - y
-//         const dist = Math.sqrt(dx*dx + dy*dy)
-//         const score = Math.exp(dist*-0.003)
+// Section 01 / Load animation
 
-//         //div.innerHTML = score.toFixed(2)
-//         div.style.transform ="scale(" + score + ")" + " rotate(" + 0 + "deg)"
-//         div.style.opacity = score
-//     })
-
-// })
 
 var g1 = document.querySelector('.g-part-1')
 var g2 = document.querySelector('.g-part-2')
@@ -23,7 +10,6 @@ var g4 = document.querySelector('.g-part-4')
 var g5 = document.querySelector('.g-part-5')
 var logo = document.querySelector('.logo')
 var section01 = document.querySelector('.section-01')
-
 
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -44,19 +30,53 @@ document.addEventListener('DOMContentLoaded', function(){
     }, 2200)
     setTimeout(function(){
         logo.classList.remove("logoAnimation");
-    }, 2300)
-
+    }, 2250)
 })
 
-// document.addEventListener('DOMContentLoaded', function(){
-//     document.querySelectorAll('.int-01 div').forEach(div =>{
-//         div.style.transform ="rotate(" + Math.round(Math.random()*100) + "deg)"
-//     })
-    
-//     setTimeout(function(){
-//         document.querySelector('.section-01', function(){
-//             this.style.height="0vh"
-//         })
-//     }, 3000)
-// })
 
+// Section 02 // Hover effect
+
+
+// Randomly assign rotation to each plus
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.int-plus').forEach(div =>{
+        div.style.transform ="rotate(" + Math.round(Math.random()*180) + "deg)"
+    })
+})
+
+
+// Interactive behaviour on mouse move
+
+document.addEventListener('mousemove', function(e){
+
+    const x = e.clientX
+    const y = e.clientY
+    
+    document.querySelectorAll('.int-plus-container').forEach(div =>{
+        // calculate the position of the cursor relative to the div (Up + Down)
+        const dx = div.offsetLeft + 25 - x
+        const dy = div.offsetTop + 25 - y
+        // calculate the position of the cursor diagonally (Trig / Pythagoras)
+        const dist = Math.sqrt(dx * dx + dy * dy)
+
+        const score = Math.exp(dist * -0.0025)
+
+        div.style.opacity = score
+        div.style.transform="scale(" + score + ")"
+        if(score > 0.5){
+            div.firstChild.style.transform="rotate(0deg)"
+        }
+    })
+})
+
+
+// // Scrollify
+
+$(function() {
+	$.scrollify({
+		section:".panel",
+		scrollSpeed:1100,
+		after:function(i) {
+		}
+	});
+});

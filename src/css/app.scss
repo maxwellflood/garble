@@ -25,6 +25,12 @@ $white: #fff;
     -webkit-transition: all $property cubic-bezier(.77, 0, .175, 1);
     -ms-transition: all $property cubic-bezier(.77, 0, .175, 1);
     transition: all $property cubic-bezier(.77, 0, .175, 1);
+}
+
+@mixin transition-ease ($property){
+    -webkit-transition: all $property ease;
+    -ms-transition: all $property ease;
+    transition: all $property ease;
 } 
 
 
@@ -62,7 +68,6 @@ h2{
 p{  
     font-size: 1.5vmax;
     line-height: 1.5;
-    margin: 0px 0px 60px;
 }
 
 a {
@@ -95,7 +100,7 @@ a {
 }
 
 .logoAnimation{
-    transform: translateY(50px);
+    transform: translateX(50px);
     opacity: 0;
 }
 
@@ -172,29 +177,36 @@ a {
 
 .int-01-wrapper{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     left: 0;
 }
 
 .int-01{
-    width: 100%;
-    height: 100%;
+    width: 1200px;
     display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    grid-auto-rows: 50px;
 }
 
-.int-01 div{
+.int-plus-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.1;
+    opacity: 0.5;
+    font-family: "Messina-Light";
+    cursor: default;
+    @include transform (scale(0.1));
+    @include transition-ease(.3s);
 }
 
-// div{
-//     font-weight: 100;
-//     transform: rotate(45deg) scale(0.1);
-//     opacity: 0.1;
-// }
+.int-plus{
+    font-size: 60px;
+    transform-origin: center center;
+    @include transition-ease(.3s);
+}
+
 
