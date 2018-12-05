@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }, 2200)
     setTimeout(function(){
         logo.classList.remove("logoAnimation");
-    }, 2250)
+    }, 2350)
 })
 
 
